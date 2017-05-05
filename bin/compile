@@ -31,9 +31,7 @@ fi
 echo "\n-----> Extracting Hugo ${VERSION} binaries to ${BUILD_DIR}"
 mkdir -p $CACHE_DIR/$RELEASE_NAME | indent
 tar -zxvf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR | indent
-mkdir -p /app/bin
-echo $PATH
-mv $CACHE_DIR/hugo /app/bin/hugo | indent
+mv $CACHE_DIR/hugo /bin/hugo | indent
 
 # Fetch a theme specified in the .hugotheme file
 if [ -e $BUILD_DIR/.hugotheme ]; then
