@@ -31,7 +31,6 @@ fi
 echo "\n-----> Extracting Hugo ${VERSION} binaries to ${BUILD_DIR}"
 mkdir -p $CACHE_DIR/$RELEASE_NAME | indent
 tar -zxvf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR | indent
-export PATH=$BUILD_DIR/bin:$PATH
 mkdir -p $BUILD_DIR/bin
 mv $CACHE_DIR/hugo $BUILD_DIR/bin/hugo
 
