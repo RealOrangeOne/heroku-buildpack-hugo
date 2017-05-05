@@ -32,6 +32,7 @@ echo "\n-----> Extracting Hugo ${VERSION} binaries to ${BUILD_DIR}"
 mkdir -p $CACHE_DIR/$RELEASE_NAME | indent
 tar -zxvf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR | indent
 mv $CACHE_DIR/hugo $BUILD_DIR/hugo | indent
+export PATH=${PATH}:${BUILD_DIR}
 
 # Fetch a theme specified in the .hugotheme file
 if [ -e $BUILD_DIR/.hugotheme ]; then
@@ -40,9 +41,3 @@ if [ -e $BUILD_DIR/.hugotheme ]; then
   rm -rf $BUILD_DIR/themes && mkdir $BUILD_DIR/themes && cd $BUILD_DIR/themes
   git clone $THEME_URL
 fi
-
-# Build the site
-echo "\n-----> Building the site"
-cd $BUILD_DIR
-mkdir -p static | indent
-./hugo | indent
