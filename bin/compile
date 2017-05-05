@@ -34,7 +34,6 @@ tar -zxvf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR | indent
 export PATH=$BUILD_DIR/bin:$PATH
 mkdir -p $BUILD_DIR/bin
 mv $CACHE_DIR/hugo $BUILD_DIR/bin/hugo
-echo $PATH
 
 # Fetch a theme specified in the .hugotheme file
 if [ -e $BUILD_DIR/.hugotheme ]; then
